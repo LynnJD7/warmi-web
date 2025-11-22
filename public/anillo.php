@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+echo "<script>";
+echo "console.log('SESSION DATA:', " . json_encode($_SESSION) . ");";
+echo "</script>";
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

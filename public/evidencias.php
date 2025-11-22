@@ -36,10 +36,10 @@ if (!isset($_SESSION['user_id'])) {
         <table class="table table-hover table-sm align-middle">
             <thead class="custom-bg-purple text-white">
                 <tr>
-                    <th>ID</th>
-                    <th>Tipo</th>
                     <th>Archivo</th>
+                    <th>Tipo</th>
                     <th>Fecha</th>
+                    <th>Tamaño</th>
                     <th class="text-center">Acción</th>
                 </tr>
             </thead>
@@ -51,11 +51,11 @@ if (!isset($_SESSION['user_id'])) {
         </table>
     </div>
 
-    <div class="text-center mt-5">
+    <!--<div class="text-center mt-5">
         <button class="btn custom-btn-purple btn-lg" disabled>
             <i class="fas fa-download me-2"></i> Descargar las últimas 5 evidencias (Próximamente)
         </button>
-    </div>
+    </div>-->
 </main>
 
 <footer class="text-center py-3 custom-bg-light custom-text-dark mt-5 border-top">
@@ -63,5 +63,13 @@ if (!isset($_SESSION['user_id'])) {
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("evidenciasCargadas", function(event) {
+    console.log("📦 Evidencias recibidas desde el servidor:");
+    console.log(event.detail); // <-- aquí verás el array de evidencias
+});
+</script>
+
 </body>
 </html>

@@ -18,8 +18,7 @@ if (!isset($_SESSION['user_id'])) {
 
 try {
     // Obtener evidencias del usuario
-    $stmt = $conn->prepare("
-        SELECT id, tipo, nombre_archivo, fecha_captura
+    $stmt = $conn->prepare("SELECT id, nombre_archivo, tipo, fecha_captura, tamano_bytes
         FROM evidencias 
         WHERE user_id = :user_id
         ORDER BY id DESC

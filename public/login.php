@@ -26,18 +26,26 @@
                     <form action="../src/Controllers/login.php" method="post">
                         
                         <div class="mb-3">
-                            <label for="id" class="form-label custom-text-dark fw-medium">ID de Usuario</label>
+                            <label for="id" class="form-label custom-text-dark fw-medium">Nombre</label>
                             <div class="input-group">
                                 <span class="input-group-text custom-bg-light custom-text-dark border-end-0"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" id="id" name="id" placeholder="Ingresa tu ID" required>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu Nombre" required>
                             </div>
                         </div>
 
                         <div class="mb-4">
-                            <label for="nombre" class="form-label custom-text-dark fw-medium">Nombre</label>
+                            <label for="nombre" class="form-label custom-text-dark fw-medium">Apellidos</label>
                             <div class="input-group">
                                 <span class="input-group-text custom-bg-light custom-text-dark border-end-0"><i class="fas fa-id-card"></i></span>
-                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingresa tus Apellidos" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id" class="form-label custom-text-dark fw-medium">Correo</label>
+                            <div class="input-group">
+                                <span class="input-group-text custom-bg-light custom-text-dark border-end-0"><i class="fas fa-user"></i></span>
+                                <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu correo" required>
                             </div>
                         </div>
 

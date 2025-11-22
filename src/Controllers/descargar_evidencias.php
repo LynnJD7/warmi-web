@@ -8,20 +8,19 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Verificar ID recibido
-if (!isset($_GET['id'])) {
+if (!isset($_GET['nombre_archivo'])) {
     die("ID de evidencia no especificado");
 }
 
-$id = $_GET['id'];
+$nombre_archivo = $_GET['nombre_archivo'];
 
 // Preparar consulta
-$stmt = $conn->prepare("
-    SELECT nombre_archivo, tipo, archivo 
+$stmt = $conn->prepare(" SELECT nombre_archivo, tipo, archivo 
     FROM evidencias 
-    WHERE id = :id AND user_id = :user_id
+    WHERE nombre_archivo = :nombre_archivo AND user_id = :user_id
 ");
 
-$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->bindParam(':nombre_archivo', $nombre_archivo, PDO::PARAM_STR);
 $stmt->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
 $stmt->execute();
 

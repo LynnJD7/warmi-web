@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 fetch('../src/Controllers/listar_evidencias.php')
         .then(res => res.json())
         .then(data => {
+            console.log("Evidencias recibidas:", data);
+
             const tbody = document.getElementById('tbody-evidencias');
             tbody.innerHTML = ''; // Limpiar el "Cargando..."
 
@@ -13,12 +15,13 @@ fetch('../src/Controllers/listar_evidencias.php')
             data.forEach(e => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td>${e.id}</td>
-                    <td>${e.tipo}</td>
                     <td>${e.nombre_archivo}</td>
+                    <td>${e.tipo}</td>
                     <td>${e.fecha_captura}</td>
+                    <td>${e.tamano_bytes}</td>
                     <td>
-                    <a href="../src/Controllers/descargar_evidencias.php?id=${e.id}" 
+                    <a href="../src/Controllers/descargar_evidencias.php?nombre_archivo=${encodeURIComponent(e.nombre_archivo)}
+" 
                     class="btn-descargar" 
                     target="_blank">
                     Descargar

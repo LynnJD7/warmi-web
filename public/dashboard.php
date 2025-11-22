@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+echo "<script>";
+echo "console.log('SESSION DATA:', " . json_encode($_SESSION) . ");";
+echo "</script>";
+
 // Si 'user_id' no está en la sesión, redirige al login.
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
@@ -52,7 +57,7 @@ require '../src/includes/header.php';
                     </div>
                 </div>
 
-                <!--<div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
                     <div class="card h-100 p-3 custom-bg-info border-0 shadow-sm">
                         <div class="card-body text-center">
                             <i class="fas fa-ring fa-3x mb-3 custom-text-purple"></i>
@@ -63,7 +68,7 @@ require '../src/includes/header.php';
                             </a>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 
             </div>
         </div>
