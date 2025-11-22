@@ -43,7 +43,7 @@ session_start();
                             <div class="card-body">
                                 <h5 class="card-title custom-text-dark fw-bold fs-4">Anillo WARMI360 - Edición Segura
                                 </h5>
-                                <p class="card-text fs-5 custom-text-purple mb-4">Precio unitario: S/. 100.00</p>
+                                <p class="card-text fs-5 custom-text-purple mb-4">Precio unitario: S/. 40.00</p>
 
                                 <div class="d-flex align-items-center mb-4">
                                     <label for="cantidad"
@@ -61,7 +61,7 @@ session_start();
                                 </div>
 
                                 <p class="mt-3 fs-5 custom-text-dark">Total a pagar: <span id="total"
-                                        class="fw-bold custom-text-purple">S/. 100.00</span></p>
+                                        class="fw-bold custom-text-purple">S/. 40.00</span></p>
                             </div>
                         </div>
                     </div>

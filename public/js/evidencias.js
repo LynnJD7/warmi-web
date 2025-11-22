@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('php/listar_evidencias.php')
+fetch('../src/Controllers/listar_evidencias.php')
         .then(res => res.json())
         .then(data => {
             const tbody = document.getElementById('tbody-evidencias');
             tbody.innerHTML = ''; // Limpiar el "Cargando..."
 
-            if (data.length === 0) {
+            if (!data || data.length === 0) {
                 tbody.innerHTML = '<tr><td colspan="5">No hay evidencias disponibles</td></tr>';
                 return;
             }
@@ -18,8 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>${e.nombre_archivo}</td>
                     <td>${e.fecha_captura}</td>
                     <td>
-                        <a href="php/descargar_evidencia.php?id=${e.id}" class="btn-descargar" target="_blank">Descargar</a>
+                    <a href="../src/Controllers/descargar_evidencias.php?id=${e.id}" 
+                    class="btn-descargar" 
+                    target="_blank">
+                    Descargar
+                    </a>
                     </td>
+
                 `;
                 tbody.appendChild(tr);
             });

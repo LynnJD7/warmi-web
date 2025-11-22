@@ -1,7 +1,7 @@
 // js/anillo.js
 
 // Precio unitario del anillo (S/. 100.00)
-const PRECIO_UNITARIO = 100.00;
+const PRECIO_UNITARIO = 40.00;
 
 /**
  * Función para actualizar la cantidad y el total.

@@ -31,10 +31,10 @@ if (!isset($_SESSION['user_id'])) {
         <img src="../img/anillo.jpg" alt="Dije Inteligente WARMI360">
         <h2>Dije Inteligente WARMI360</h2>
         <p>Protección, seguridad y estilo en un solo dije. Ideal para mujeres que buscan seguridad y bienestar.</p>
-        <p>Precio unitario: S/ <span id="precioUnitario">120</span></p>
+        <p>Precio unitario: S/ <span id="precioUnitario">40</span></p>
         <label>Cantidad:</label>
         <input type="number" id="cantidad" value="1" min="1" onchange="actualizarTotal()">
-        <p>Total: S/ <span id="total">120</span></p>
+        <p>Total: S/ <span id="total">40</span></p>
         <button onclick="generarPago()">Generar QR de pago</button>
         <div id="qrPago"></div>
         <div id="estadoPago"></div>

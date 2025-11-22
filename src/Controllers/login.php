@@ -7,31 +7,36 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Obtener datos globales
 $id = $_POST['id'] ?? '';
 $nombre = $_POST['nombre'] ?? '';
 
 if (empty($id) || empty($nombre)) {
-    // Redireccionar al login con un mensaje de error
-    header("Location: ../../public/index.php?error=missing_data");
+    header("Location: ../../public/login.php?error=missing_data");
     exit;
 }
 
-// Consulta segura (PELIGRO: Falta verificación de contraseña)
-$stmt = $conn->prepare( "SELECT * FROM usuarios 
-WHERE id = :id AND nombre = :nombre");
+// Verificar usuario
+$stmt = $conn->prepare("
+    SELECT * FROM usuarios
+    WHERE id = :id AND nombre = :nombre
+");
 $stmt->bindParam(':id', $id);
 $stmt->bindParam(':nombre', $nombre);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if($user){
-    $_SESSION['id'] = $user['id'];
-    $_SESSION['nombre'] = $user['nombre'];
+if ($user) {
+
+    // -------------- FIX REAL -----------------
+    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['user_nombre'] = $user['nombre'];
+    // -----------------------------------------
+
     header("Location: ../../public/dashboard.php");
     exit;
+
 } else {
-    header("Location: ../../public/index.php?error=invalid_credentials");
+    header("Location: ../../public/login.php?error=invalid_credentials");
     exit;
 }
 ?>

@@ -26,31 +26,33 @@ $equipo = [
 ];
 
 $pilares = [
-    ["icon" => "fa-bell", "titulo" => "Botón de Emergencia", "texto" => "Envía alertas con tu ubicación a contactos de confianza y centros de ayuda."],
-    ["icon" => "fa-map-marked-alt", "titulo" => "Mapa Seguro", "texto" => "Identifica zonas seguras y rutas recomendadas en tiempo real."],
-    ["icon" => "fa-book-open", "titulo" => "Educación Integral", "texto" => "Accede a contenidos sobre derechos, salud emocional y empoderamiento."],
-    ["icon" => "fa-users", "titulo" => "Comunidad Activa", "texto" => "Conecta con otras mujeres, comparte experiencias y recibe apoyo."]
+    ["icon" => "fa-map-marked-alt", "titulo" => "Nuestra Misión", "texto" => "Integrar herramientas tecnológicas avanzadas y el apoyo comunitario para crear un escudo de protección. Buscamos empoderar a las mujeres proporcionándoles recursos discretos y efectivos para la gestión de su seguridad personal."],
+    ["icon" => "fa-book-open", "titulo" => "Nuestra Visión", "texto" => "WARMI360 proyecta convertirse en un ecosistema digital confiable, accesible y seguro, capaz de acompañar a millones de mujeres mediante un anillo inteligente, una aplicación móvil y una plataforma web que promuevan sororidad y resiliencia."],
+    ["icon" => "fa-book-open", "titulo" => "Nuestra Tecnología Integrada", "texto" => "La fortaleza de WARMI360 reside en la sinergia de sus componentes:<br>
+    • App Móvil: Para alertas rápidas y geolocalización.<br>
+    • Plataforma Web: Para gestión de cuentas, visualización de evidencias y acceso a recursos.<br>
+    • Anillo Inteligente: Un dispositivo discreto que activa alertas de emergencia."]
+
+
+
+
 ];
 $articulos = [
     [
         "nombre" => "Anillo Inteligente",
-        "precio" => "S/ 100.00",
-        "img_url" => "anillo.jpg",
+        "precio" => "S/ 40.00",
+        "img_url" => "anillo.png",
         "descripcion" => "Dispositivo de seguridad que envía alertas discretas a tu red de apoyo con solo un toque.",
-        "local_img" => "anillo.jpg"
+        "local_img" => "anillo.png"
     ]
 ];
-$planes = [
-    ["nombre" => "Plan Gratuito", "precio" => "S/ 0.00 / mes", "beneficios" => ["Acceso a Comunidad Básica", "Contenido Educativo Limitado"]],
-    ["nombre" => "Plan Guardiana", "precio" => "S/ 5.00 / mes", "beneficios" => ["Monitoreo de Alertas 24/7", "Red de Confianza Ilimitada", "Comunidad Básica"]],
-    ["nombre" => "Plan WARMI 360", "precio" => "S/ 10.00 / mes", "beneficios" => ["Todo del Plan Guardiana", "Línea de Apoyo Psicológico", "Talleres Virtuales"]]
-];
+
 $base_url = '.'; // Punto de partida para rutas relativas.
 
 // Definición de variables de estilo customizado para el Hero, si es necesario
 // NOTA: Estas variables están en línea para asegurar el fondo, pero deberían definirse en css/style.css
 $hero_style = "
-    background-image: url('https://s.france24.com/media/display/2f1603b2-618a-11ea-b917-005056a98db9/w:1280/p:16x9/MOBILISATION.jpg'); 
+    background-image: url('img/header_inicio.png'); 
     background-size: cover; 
     background-position: center;
     min-height: 50vh; 
@@ -88,8 +90,8 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
             <div class="container text-center position-relative" style="z-index: 2;">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <h1 class="display-3 fw-bold mb-4">Tu seguridad, tu voz, tu comunidad.</h1>
-                        <p class="fs-5 text-light mb-5">WARMI 360 es una app creada por y para mujeres peruanas. Conecta, protege y empodera.</p>
+                        <h1 class="display-3 fw-bold mb-4">Rompamos el silencio, construyamos libertad</h1>
+                        <p class="fs-5 text-light mb-5">WARMI 360 es una multiplataforma creada por y para mujeres peruanas. Ayuda y proteje.</p>
                         <a href="#que-es" class="btn custom-btn-secondary btn-lg fw-bold shadow">Descubre cómo funciona</a>
                     </div>
                 </div>
@@ -105,17 +107,17 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
                     <div class="col-md-6">
                         <h2 class="display-6 fw-bold custom-text-dark mb-4">¿Qué es WARMI 360?</h2>
                         <p class="text-secondary mb-4 text-justify">
-                            **WARMI 360** es una plataforma digital diseñada para fortalecer el bienestar, la seguridad emocional y la protección de **mujeres peruanas**.
+                            WARMI360 es una plataforma tecnológica diseñada para proteger a las mujeres peruanas mediante tres componentes: un anillo inteligente, una aplicación móvil y una plataforma web.
+                            El sistema permite activar alertas de emergencia, compartir la ubicación con contactos de confianza e identificar la violencia.
                         </p>
-                        <p class="text-secondary text-justify">
-                            A través de un ecosistema que integra tecnología, cultura y sororidad, ofrecemos herramientas accesibles y empáticas para el autocuidado, la conexión con redes de apoyo y la gestión de situaciones de riesgo.
+                        <p>
+                            A través de un ecosistema que integra tecnología y sororidad, ofrecemos herramientas accesibles y empáticas para la conexión con redes de apoyo y la identificacion de la violencia.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        ---
 
         <section id="pilares" class="py-5 bg-white">
             <div class="container text-center">
@@ -126,7 +128,7 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
                             <div class="p-4 rounded-3 shadow h-100 border border-1 custom-border-purple">
                                 <i class="fas <?= htmlspecialchars($p['icon']) ?> fa-3x custom-text-purple mb-4"></i>
                                 <h3 class="h5 fw-bold custom-text-dark mb-2"><?= htmlspecialchars($p['titulo']) ?></h3>
-                                <p class="text-secondary small"><?= htmlspecialchars($p['texto']) ?></p>
+                                <div class="text-secondary small"><?= $p['texto'] ?></div>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -134,7 +136,6 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
             </div>
         </section>
 
-        ---
 
         <section id="equipo" class="py-5 custom-bg-light">
             <div class="container text-center">
@@ -156,7 +157,6 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
             </div>
         </section>
         
-        ---
 
         <section id="tienda" class="py-5 bg-white">
             <div class="container text-center">
@@ -173,7 +173,7 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
                                     src="<?= htmlspecialchars($a['img_url']) ?>"
                                     alt="<?= htmlspecialchars($a['nombre']) ?>"
                                     class="card-img-top object-fit-cover"
-                                    style="height: 300px;"
+                                    style="height: 500px;"
                                     onerror="this.onerror=null;this.src='<?= htmlspecialchars($fallback) ?>';"
                                 >
                                 
@@ -189,33 +189,6 @@ $overlay_style = "background-color: rgba(76, 53, 88, 0.6); z-index: 1;";
                 </div>
             </div>
         </section>
-
-        ---
-
-        <section id="planes" class="py-5 custom-bg-light">
-            <div class="container text-center">
-                <h2 class="display-6 fw-bold custom-text-dark mb-5">Elige tu Plan WARMI 360</h2>
-                <div class="row g-4 justify-content-center">
-                    <?php foreach ($planes as $p): ?>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card h-100 shadow-lg p-3 rounded-3">
-                                <div class="card-body">
-                                    <h3 class="h4 fw-bold custom-text-dark mb-2"><?= htmlspecialchars($p['nombre']) ?></h3>
-                                    <p class="fs-3 fw-bold custom-text-purple mb-4"><?= htmlspecialchars($p['precio']) ?></p>
-                                    <ul class="list-unstyled text-secondary small text-start mx-auto mb-4">
-                                        <?php foreach ($p['beneficios'] as $b): ?>
-                                            <li class="mb-2">✅ <?= htmlspecialchars($b) ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                    <a href="#" class="btn custom-btn-purple">Seleccionar</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </section>
-
     </main>
     
     <footer class="text-center py-3 custom-bg-light custom-text-dark border-top border-secondary border-opacity-25">

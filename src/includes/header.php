@@ -30,7 +30,6 @@ if (!$is_logged_in) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link custom-text-dark" href="index.php">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link custom-text-dark" href="nosotros.php">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link custom-text-dark" href="anillo.php">Anillo</a></li>
                     
                     <?php if ($is_logged_in): ?>

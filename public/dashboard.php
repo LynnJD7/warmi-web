@@ -1,13 +1,13 @@
 <?php
 session_start();
 // Si 'user_id' no está en la sesión, redirige al login.
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: login.php"); 
     exit;
 }
 
-// 3. Obtener el nombre para el saludo (si está disponible)
-$user_name = $_SESSION['nombre'] ?? 'Usuaria';
+$user_name = $_SESSION['user_nombre'] ?? 'Usuaria';
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
