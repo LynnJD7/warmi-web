@@ -64,26 +64,8 @@ require '../src/includes/header.php';
                         </div>
                     </div>
                 </div> -->
-
-                <div class="col-md-6 col-lg-6">
-                    <div class="card h-100 p-3 custom-bg-info border-0 shadow-sm">
-                        <div class="card-body text-center">
-                            <i class="fas fa-user-circle fa-3x mb-3 custom-text-purple"></i>
-                            <h5 class="card-title fw-bold custom-text-dark">Mi Perfil</h5>
-                            <p class="card-text text-muted">Actualiza tus datos personales y contactos de emergencia.</p>
-                            <a href="#" class="btn btn-outline-secondary custom-btn-outline-purple mt-2 w-100" disabled>
-                                Editar Perfil
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 
             </div>
-            <section class="mt-5 p-4 custom-bg-info rounded-3 text-center">
-                <p class="mb-0 fs-5">
-                    ¿Necesitas ayuda? Accede a nuestra sección de <a href="nosotros.php" class="custom-text-purple fw-bold">soporte y manuales.</a>
-                </p>
-            </section>
         </div>
     </div>
 </main>

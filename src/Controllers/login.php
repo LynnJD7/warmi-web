@@ -11,15 +11,12 @@ $id = $_POST['id'] ?? '';
 $nombre = $_POST['nombre'] ?? '';
 
 if (empty($id) || empty($nombre)) {
-    header("Location: ../../public/login.php?error=missing_data");
+    header("Location: ../../public/index.php?error=missing_data");
     exit;
 }
 
 // Verificar usuario
-$stmt = $conn->prepare("
-    SELECT * FROM usuarios
-    WHERE id = :id AND nombre = :nombre
-");
+$stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = :id AND nombre = :nombre");
 $stmt->bindParam(':id', $id);
 $stmt->bindParam(':nombre', $nombre);
 $stmt->execute();
@@ -36,7 +33,7 @@ if ($user) {
     exit;
 
 } else {
-    header("Location: ../../public/login.php?error=invalid_credentials");
+    header("Location: ../../public/index.php?error=invalid_credentials");
     exit;
 }
 ?>

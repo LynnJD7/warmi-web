@@ -4,8 +4,8 @@
 // NOTA: Asume que session_start(); fue llamado en el archivo de la vista que incluye este header.
 
 // Determinar el estado del usuario: Usando 'id' como se acordó
-$is_logged_in = isset($_SESSION['id']); 
-$user_name = $_SESSION['nombre'] ?? 'Usuario/a'; // Para mostrar el nombre en el menú
+$is_logged_in = isset($_SESSION['user_id']); 
+$user_name = $_SESSION['user_nombre'] ?? 'Usuario/a'; // Para mostrar el nombre en el menú
 
 // --- Lógica del Enlace Único (Usuario NO Logueado) ---
 if (!$is_logged_in) {
