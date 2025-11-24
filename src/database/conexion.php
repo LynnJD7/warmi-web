@@ -1,28 +1,44 @@
 <?php
-$host = "maglev.proxy.rlwy.net";
-$port = 50204;
-$database = "alertamujer";
-$user = "root";
-$password = "CZhVEBZHQRoZvxHsUoPlOrWgSTXnacGc";
+namespace Database;
 
-/*$host = "localhost";
-$port = 3310;
-$database = "alertamujer";
-$user = "root";
-$password = "";*/
+require_once __DIR__ . '/../Helpers/env_loader.php';
 
+use PDO;
+use PDOException;
+use Exception;
 
-try {
-    $conn = new PDO("mysql:host=$host;port=$port;dbname=$database;charset=utf8",
-        $user,
-        $password,
-        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-    );
-    
-} catch (PDOException $e) {
-    // Si la conexión falla, se muestra el error y se detiene la ejecución.
-    error_log("Error fatal de conexión DB: " . $e->getMessage()); 
-    echo json_encode(['success' => false, 'message' => 'Error interno del servidor.']);
-    exit;
+class Conexion {
+
+    private static $instance = null;
+
+    public static function getConexion() {
+
+        if (self::$instance !== null) {
+            return self::$instance;
+        }
+
+        $host = env("DB_HOST");
+        $port = env("DB_PORT");
+        $database = env("DB_DATABASE");
+        $user = env("DB_USER");
+        $password = env("DB_PASSWORD");
+
+        try {
+            self::$instance = new PDO(
+                "mysql:host=$host;port=$port;dbname=$database;charset=utf8",
+                $user,
+                $password,
+                [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                ]
+            );
+
+            return self::$instance;
+
+        } catch (PDOException $e) {
+            error_log("Error de conexión: " . $e->getMessage());
+            throw new Exception("Error interno del servidor.");
+        }
+    }
 }
-?>
